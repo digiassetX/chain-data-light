@@ -8,18 +8,6 @@ const app_api = express();
 app_api.use(bodyParser.urlencoded({ extended: false }));
 app_api.use(bodyParser.json());
 app_api.use(cors());
-
-const crypto = require("crypto-js");
-
-function getSignatureKey(key, dateStamp, regionName, serviceName) {
-    const kDate = crypto.HmacSHA256(dateStamp, "AWS4" + key);
-    const kRegion = crypto.HmacSHA256(regionName, kDate);
-    const kService = crypto.HmacSHA256(serviceName, kRegion);
-    const kSigning = crypto.HmacSHA256("aws4_request", kService);
-    return kSigning;
-}
-
-
 app_api.get('/key/:key',(req,res)=>{
     try {
         const url=s3.getSignedUrl('getObject', {
