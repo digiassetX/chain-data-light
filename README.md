@@ -45,7 +45,7 @@ Very light chain data access system
             ],
             "Resource": [
                 "arn:aws:s3:::*/*",
-                "arn:aws:s3:::chain-data-address"
+                "arn:aws:s3:::chaindata-digibyte"
             ]
         }
     ]
