@@ -4,8 +4,8 @@ module.exports={
         accessKeyId:        '',		//enter aws access key
         secretAccessKey:    '',		//enter aws access key
         signatureVersion:   'v4',           //don't change
-        region:             'us-east-2'     //don't change
+        region:             'ca-central-1'     //don't change
     },
-    bucket: 'chain-data-address',   //don't change
+    bucket: 'chaindata-digibyte',   //don't change
     life:   300                     //number of seconds to grant permission for
 };
